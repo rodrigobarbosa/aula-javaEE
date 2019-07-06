@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -30,6 +31,7 @@ public class SegundoServlet extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
+		System.out.println("Iniciando o Servlet 2");
 	}
 
 	/**
@@ -37,6 +39,9 @@ public class SegundoServlet extends HttpServlet {
 	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
+		
+		System.out.println("Matando o Servlet 2");
+		super.destroy();
 	}
 
 	/**
@@ -44,6 +49,8 @@ public class SegundoServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("Chamando o Service 2");
+		doGet(request, response);
 	}
 
 	/**
@@ -51,7 +58,18 @@ public class SegundoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		PrintWriter resposta = response.getWriter();
+		resposta.append("<html>");
+		resposta.append("<head>");
+		resposta.append("</head>");
+		resposta.append("<body>");
+		resposta.append("<p>BEM VINDO 2.</p>");
+		resposta.append("</body>");
+		resposta.append("</html>");
+		
+		destroy();
 	}
 
 	/**
@@ -60,6 +78,17 @@ public class SegundoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		PrintWriter resposta = response.getWriter();
+		resposta.append("<html>");
+		resposta.append("<head>");
+		resposta.append("</head>");
+		resposta.append("<body>");
+		resposta.append("<p>BEM VINDO 2.</p>");
+		resposta.append("</body>");
+		resposta.append("</html>");
+		
+		destroy();
 	}
 
 }

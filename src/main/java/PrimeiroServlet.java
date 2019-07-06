@@ -66,6 +66,8 @@ public class PrimeiroServlet extends HttpServlet {
 		resposta.append("<p>BEM VINDO.</p>");
 		resposta.append("</body>");
 		resposta.append("</html>");
+		
+		destroy();
 	}
 
 	/**
