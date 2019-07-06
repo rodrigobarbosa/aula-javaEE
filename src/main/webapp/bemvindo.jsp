@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>Bem vindo.</div>
+	<p>Bem vindo Sr. ${login}.</p>
 </body>
 </html>

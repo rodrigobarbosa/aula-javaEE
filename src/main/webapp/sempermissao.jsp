@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>Sem permissão.</div>
+	<p>Sr. ${login}, não é possível realizar login.</p>
 </body>
 </html>
